@@ -34,8 +34,7 @@ function testing(){
 
 </head>
 <body>
-Enter your name: 
-pls insert it now! 
+Enter your name:
 <input id="from" type="text" />
 <button id="fromBtn" type="submit">Send</button>
 <p id="msg"></p>
