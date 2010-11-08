@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+<title>Sample DWR based web project</title>
+<script type='text/javascript' src='dwr/interface/HelloWorld.js'></script>
+<script type='text/javascript' src='dwr/engine.js'></script>
+<script type='text/javascript' src='dwr/util.js'></script>
+<script type='text/javascript' src='js/behaviour.js'></script>
+
+<script type="text/javascript">
+
+
+var presentationBehaviour = 
+{
+  '#fromBtn' : function (element) 
+  {
+    element.onclick = function (event)
+    {
+    	 HelloWorld.sayHello(DWRUtil.getValue("from"),function (message){DWRUtil.setValue("msg", message); alert(message);});
+    	 
+    }
+  }
+};
+
+
+Behaviour.register(presentationBehaviour);
+
+function testing(){
+	HelloWorld.wowowee(function(reply){DWRUtil.setValue("table", reply);});
+}  
+  </script>
+
+
+</head>
+<body>
+Enter your name:
+<input id="from" type="text" />
+<button id="fromBtn" type="submit">Send</button>
+<p id="msg"></p>
+<div onmouseover="">the text text text</div>
+<div id="table"></div>
+</body>
+</html>
